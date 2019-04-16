@@ -1,8 +1,30 @@
-# Write a function `is_leap_year` that takes a year as a parameter
-#   -->**RETURNS**<-- True if the year is a leap year, False otherwise.
-# The logic-chain is somewhat similar to the Sherlock problem.
+def is_leap(year):
+    # your code here
+    
+    flag = False
+    
+    if year % 4 == 0:
+       flag = True
+        
+    if year % 100 == 0:
+       flag = False
+            
+    if year % 400 == 0:
+       flag = True
+    
+    
+    return flag
+    
 
-# Don't forget to reach out for help after your own due diligence
+# Below is a set of tests so you can check if your code is correct.
+from test import testEqual
 
-def is_leap_year(year):
-    return ''
+testEqual(is_leap(1944), True)
+testEqual(is_leap(2011), False)
+testEqual(is_leap(1986), False)
+testEqual(is_leap(1956), True)
+testEqual(is_leap(1957), False)
+testEqual(is_leap(1800), False)
+testEqual(is_leap(1900), False)
+testEqual(is_leap(1600), True)
+testEqual(is_leap(2056), True)

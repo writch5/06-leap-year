@@ -1,19 +1,30 @@
-from leap_year import is_leap_year
+def is_leap(year):
+    # your code here
+    
+    flag = False
+    
+    if year % 4 == 0:
+       flag = True
+        
+    if year % 100 == 0:
+       flag = False
+            
+    if year % 400 == 0:
+       flag = True
+    
+    
+    return flag
+    
 
-test_cases = [
-    [1944, True],
-    [2011, False],
-    [1986, False],
-    [1956, True],
-    [1957, False],
-    [1800, False],
-    [1900, False],
-    [1600, True],
-    [2056, True],
-]
+# Below is a set of tests so you can check if your code is correct.
+from test import testEqual
 
-def test_leap_year_test_cases():
-    for test_case in test_cases:
-        is_leap_year_response = is_leap_year(test_case[0])
-        assert is_leap_year_response == test_case[
-            1], f'For {test_case[0]} Expected {test_case[1]}, got {is_leap_year_response}'
+testEqual(is_leap(1944), True)
+testEqual(is_leap(2011), False)
+testEqual(is_leap(1986), False)
+testEqual(is_leap(1956), True)
+testEqual(is_leap(1957), False)
+testEqual(is_leap(1800), False)
+testEqual(is_leap(1900), False)
+testEqual(is_leap(1600), True)
+testEqual(is_leap(2056), True)
